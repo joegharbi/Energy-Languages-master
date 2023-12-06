@@ -5,4 +5,8 @@ tmp.*
 *.class
 lshw
 sysinfo.*
+revcomp-input25000000.txt
+regexredux-input5000000.txt
+regexredux-input50000.txt
+knucleotide-input25000000.txt
 
