@@ -8,4 +8,5 @@ sysinfo.*
 ./*.txt
 *.exe
 *.beam
+*.erl
 
