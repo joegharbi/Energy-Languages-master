@@ -6,4 +6,6 @@ tmp.*
 lshw
 sysinfo.*
 ./*.txt
+*.exe
+*.beam
 

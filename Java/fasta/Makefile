@@ -1,15 +1,14 @@
 compile:
-	cp fasta.java-5.java fasta.java
-	/usr/local/src/jdk1.8.0_121/bin/javac -d .  fasta.java
+	copy fasta.java-5.java fasta.java
+	javac -d .  fasta.java
 measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/local/src/jdk1.8.0_121/bin/java   fasta 25000000" Java fasta
-
+	cmd /C start /B cmd /C "scaphandre json -n 100000 -f fannkuchredux-12.json >NUL 2>NUL"
+	timeout /T 5 /NOBREAK > NUL
+	java   fasta 25000000
+	timeout /T 5 /NOBREAK > NUL
+	taskkill /F /IM scaphandre.exe
 run:
-	/usr/local/src/jdk1.8.0_121/bin/java   fasta 25000000
+	java   fasta 25000000
+clean:
+	del /Q *.json *.class
 
-mem:
-	/usr/bin/time -v /usr/local/src/jdk1.8.0_121/bin/java   fasta 25000000
-
-valgrind:
-	valgrind --tool=massif --stacks=yes /usr/local/src/jdk1.8.0_121/bin/java   fasta 25000000
