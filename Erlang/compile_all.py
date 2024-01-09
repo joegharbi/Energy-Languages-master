@@ -67,7 +67,10 @@ def main():
                 if "erl.exe" in exe.lower() and consumption != 0.0:
                     total_server_consumption += consumption
                     number_samples +=1
-        total_consumption = total_server_consumption / number_samples
+        if number_samples != 0:
+          total_consumption = total_server_consumption / number_samples
+        else:
+           total_consumption = 0
                 
 
         # Multiply runtime by energy 
