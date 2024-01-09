@@ -1,14 +1,12 @@
 compile:
-	/usr/local/src/jdk1.8.0_121/bin/javac -d .  fannkuchredux.java
+	javac -d .  fannkuchredux.java
 measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/local/src/jdk1.8.0_121/bin/java   fannkuchredux 12" Java fannkuch-redux
-
+	cmd /C start /B cmd /C "scaphandre json -n 100000 -f fannkuchredux-12.json >NUL 2>NUL"
+	timeout /T 5 /NOBREAK > NUL
+	java   fannkuchredux 12
+	timeout /T 5 /NOBREAK > NUL
+	taskkill /F /IM scaphandre.exe
 run:
-	/usr/local/src/jdk1.8.0_121/bin/java   fannkuchredux 12
-
-mem:
-	/usr/bin/time -v  /usr/local/src/jdk1.8.0_121/bin/java   fannkuchredux 12
-
-valgrind:
-	valgrind --tool=massif --stacks=yes  /usr/local/src/jdk1.8.0_121/bin/java   fannkuchredux 12
+	java   fannkuchredux 12
+clean:
+	del /Q *.json *.class

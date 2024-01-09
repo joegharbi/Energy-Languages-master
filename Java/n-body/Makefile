@@ -1,15 +1,13 @@
 compile:
-	cp nbody.java-4.java nbody.java
-	/usr/local/src/jdk1.8.0_121/bin/javac -d .  nbody.java
+	copy nbody.java-4.java nbody.java
+	javac -d .  nbody.java
 measure:
-	sudo modprobe msr
-	sudo ../../RAPL/main "/usr/local/src/jdk1.8.0_121/bin/java   nbody 50000000" Java n-body
-
+	cmd /C start /B cmd /C "scaphandre json -n 100000 -f nbody.json >NUL 2>NUL"
+	timeout /T 5 /NOBREAK > NUL
+	java nbody 50000000
+	timeout /T 5 /NOBREAK > NUL
+	taskkill /F /IM scaphandre.exe
 run:
-	/usr/local/src/jdk1.8.0_121/bin/java   nbody 50000000
-
-mem:
-	/usr/bin/time -v /usr/local/src/jdk1.8.0_121/bin/java   nbody 50000000
-
-valgrind:
-	valgrind --tool=massif --stacks=yes /usr/local/src/jdk1.8.0_121/bin/java   nbody 50000000
+	java   nbody 50000000
+clean:
+	del /Q *.json *.class
