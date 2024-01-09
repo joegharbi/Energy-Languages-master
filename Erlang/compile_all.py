@@ -22,7 +22,7 @@ def main():
       pipes = subprocess.run(cmd, shell=True, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
       # std_out, std_err = pipes.communicate()
       end_time = timeit.default_timer()
-      runtime = end_time - start_time
+      runtime = end_time - start_time - 10
 
       
       if (action == 'compile') | (action == 'run'):
@@ -78,7 +78,7 @@ def main():
         with open('output.csv', 'a', newline='') as csv_file:
                       csv_writer = csv.writer(csv_file, delimiter=';')
                       # csv_writer.writerow(['Function', 'Average Runtime'])
-                      csv_writer.writerow([os.path.basename(root), final_consumption, runtime-10])
+                      csv_writer.writerow([os.path.basename(root), final_consumption, runtime])
 
       
       # call(['sleep', '5'])
