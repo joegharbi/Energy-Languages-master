@@ -9,6 +9,4 @@ sysinfo.*
 *.exe
 *.beam
 *.erl
-./revcomp-input25000000.txt
-revcomp-input25000000.txt
-
+*.txt
