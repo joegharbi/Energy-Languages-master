@@ -7,3 +7,11 @@ fprof check queens and n_queens
 check other rosetta problems
 
 => resume the findings in a paper
+
+szeged 24 March (4 pages) : rosetta + server (otp 23 vs 26)
+
+journal paper (september 20 pages)
+
+--------------------------------------------------
+
+Windows Msc work jit otp 26
