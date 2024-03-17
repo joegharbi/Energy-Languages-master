@@ -36,7 +36,7 @@ Taking the `C` language as an example, this is how the folder for the `binary-tr
 
 
 #### IMPORTANT NOTE:
-This repo is edited by Youssef Gharbi supervised by Melinda Toth. The original work exits here in [The Computer Language Benchmark Game](https://benchmarksgame-team.pages.debian.net/benchmarksgame/)
+This repo is edited by Youssef Gharbi supervised by Dr. Melinda Tóth. The original work exits here in [The Computer Language Benchmark Game](https://benchmarksgame-team.pages.debian.net/benchmarksgame/)
 
 
 ### Contacts and References
