@@ -15,6 +15,9 @@ def process_csv(input_file, output_file):
     # Create a new column which is the ratio of the 3rd column to the 4th column
     df['new_col'] = df['col3'] / df['col4']
 
+    # Round the 4th column to 2 decimal places
+    df = df.round(2)
+
     # Check if the file exists and if it's empty
     file_exists = os.path.isfile(output_file)
     file_is_empty = file_exists and os.stat(output_file).st_size == 0
