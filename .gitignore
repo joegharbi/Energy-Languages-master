@@ -1,12 +1,20 @@
+# Temporary and cache files
 *tmp
 .tmp*
 tmp.*
-.NETCore*
-*.class
-lshw
-sysinfo.*
-./*.txt
+*.log
+*.swp
+*.swo
+__pycache__/
+*.py[cod]
+
+# Benchmark-generated build artifacts
 *.exe
 *.beam
-*.erl
-*.txt
+*.class
+*.dump
+**/output
+
+# Local machine exports
+lshw
+sysinfo.*
